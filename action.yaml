@@ -1,0 +1,24 @@
+name: Composite java action
+description: Setup JDK and maven
+inputs:
+  jdk-version:
+    description: Major version of JDK
+    required: true
+  maven-version:
+    description: Version of Maven to use
+    required: true
+    default: 3.6.3
+
+runs:
+  using: "composite"
+  steps:
+  - name: Setup java
+    uses: joschi/setup-jdk@v2.3.0
+    with:
+      overwrite-settings: false
+      java-version: ${{ inputs.jdk-version }}
+
+  - name: Set up Maven
+    uses: stCarolas/setup-maven@v4
+    with:
+      maven-version: ${{ inputs.maven-version }}
