@@ -1,24 +1,28 @@
 name: Composite java action
 description: Setup JDK and maven
 inputs:
+  distribution:
+    description: Which JDK to use
+    default: adopt
   jdk-version:
     description: Major version of JDK
     required: true
   maven-version:
     description: Version of Maven to use
     required: true
-    default: 3.6.3
+    default: 3.8.1
 
 runs:
   using: "composite"
   steps:
   - name: Setup java
-    uses: joschi/setup-jdk@v2.3.0
+    uses: actions/setup-java@2.1.0
     with:
+      distribution: ${{ inputs.distribution }}
       overwrite-settings: false
       java-version: ${{ inputs.jdk-version }}
 
   - name: Set up Maven
-    uses: stCarolas/setup-maven@v4
+    uses: stCarolas/setup-maven@v4.1
     with:
       maven-version: ${{ inputs.maven-version }}
