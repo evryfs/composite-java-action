@@ -4,7 +4,7 @@ inputs:
   distribution:
     description: Which JDK to use
     default: adopt
-  jdk-version:
+  java-version:
     description: Major version of JDK
     required: true
   maven-version:
