@@ -20,7 +20,7 @@ runs:
     with:
       distribution: ${{ inputs.distribution }}
       overwrite-settings: false
-      java-version: ${{ inputs.jdk-version }}
+      java-version: ${{ inputs.java-version }}
 
   - name: Set up Maven
     uses: stCarolas/setup-maven@v4.1
