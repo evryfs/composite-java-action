@@ -3,7 +3,7 @@ description: Setup JDK and maven
 inputs:
   distribution:
     description: Which JDK to use
-    default: adopt
+    default: temurin
   java-version:
     description: Major version of JDK
     required: true
