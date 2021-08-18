@@ -10,13 +10,13 @@ inputs:
   maven-version:
     description: Version of Maven to use
     required: true
-    default: 3.8.1
+    default: 3.8.2
 
 runs:
   using: "composite"
   steps:
   - name: Setup java
-    uses: actions/setup-java@2.1.0
+    uses: actions/setup-java@v2.2.0
     with:
       distribution: ${{ inputs.distribution }}
       overwrite-settings: false
