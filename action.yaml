@@ -11,6 +11,10 @@ inputs:
     description: Version of Maven to use
     required: true
     default: 3.8.2
+  overwrite-settings:
+    description: Overwrite settings.xml
+    required: false
+    default: false
 
 runs:
   using: "composite"
@@ -19,7 +23,7 @@ runs:
     uses: actions/setup-java@v2.2.0
     with:
       distribution: ${{ inputs.distribution }}
-      overwrite-settings: false
+      overwrite-settings: ${{ inputs.overwrite-settings }}
       java-version: ${{ inputs.java-version }}
 
   - name: Set up Maven
