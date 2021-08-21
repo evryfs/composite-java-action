@@ -15,6 +15,10 @@ inputs:
     description: Overwrite settings.xml
     required: false
     default: false
+  cache:
+    description: Caching of artifacts
+    required: false
+    default: true
 
 runs:
   using: "composite"
@@ -30,3 +34,12 @@ runs:
     uses: stCarolas/setup-maven@v4.1
     with:
       maven-version: ${{ inputs.maven-version }}
+
+  - name: Cache local Maven repository
+    if: ${{ inputs.cache }}
+    uses: actions/cache@v2.1.6
+    with:
+      path: ~/.m2/repository
+      key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
+      restore-keys: |
+        ${{ runner.os }}-maven-
