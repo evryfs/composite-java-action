@@ -20,7 +20,7 @@ runs:
   using: "composite"
   steps:
   - name: Setup java
-    uses: actions/setup-java@v2.3.0
+    uses: actions/setup-java@v2.3.1
     with:
       distribution: ${{ inputs.distribution }}
       overwrite-settings: ${{ inputs.overwrite-settings }}
