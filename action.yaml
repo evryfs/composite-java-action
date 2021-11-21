@@ -10,7 +10,7 @@ inputs:
   maven-version:
     description: Version of Maven to use
     required: true
-    default: 3.8.3
+    default: 3.8.4
   overwrite-settings:
     description: Overwrite settings.xml
     required: false
