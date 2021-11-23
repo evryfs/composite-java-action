@@ -30,7 +30,7 @@ runs:
       distribution: ${{ inputs.distribution }}
       overwrite-settings: ${{ inputs.overwrite-settings }}
       java-version: ${{ inputs.java-version }}
-      cache: ${{ inputs.cache && 'maven' || '' }}
+      cache: ${{ inputs.cache == 'true' && 'maven' || '' }}
 
   - name: Set up Maven
     uses: stCarolas/setup-maven@v4.2
