@@ -33,6 +33,6 @@ runs:
       cache: ${{ inputs.cache == 'true' && 'maven' || '' }}
 
   - name: Set up Maven
-    uses: stCarolas/setup-maven@v4.2
+    uses: stCarolas/setup-maven@v4.3
     with:
       maven-version: ${{ inputs.maven-version }}
